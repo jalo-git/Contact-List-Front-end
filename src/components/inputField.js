@@ -102,8 +102,11 @@ export default class FormDataComponent extends Component {
     }
 
     render() {
+        const style = {
+            width: "95%"    
+        }
         return (
-            <div className="container m-2 p-2">
+            <div className="container m-2 p-2" style={style}>
                 <div className="card p-2 mw-2">
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">

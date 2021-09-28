@@ -12,10 +12,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-3">
             <FormDataComponent />
           </div>
-          <div className="col-lg-8">
+          <div className="col-lg-9">
             <DisplayField />
           </div>
         </div>

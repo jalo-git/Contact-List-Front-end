@@ -72,5 +72,5 @@ app.delete("/delete/:id", (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("Yey, your server is running on port 3000");
+  console.log("Yey, your server is running on port 5000");
 });
