@@ -17,11 +17,13 @@ app.post("/create", (req, res) => {
   const name = req.body.name;
   const email= req.body.email;
   const phone = req.body.phone;
+  const location= req.body.location;
+  const date = req.body.date;
  
 
   db.query(
-    "INSERT INTO userdetails (name, email, phone) VALUES (?,?,?)",
-    [name, email, phone],
+    "INSERT INTO userdetails (name, email, phone, location, date) VALUES (?,?,?,?,?)",
+    [name, email, phone, location, date],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -69,6 +71,6 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log("Yey, your server is running on port 3000");
 });
