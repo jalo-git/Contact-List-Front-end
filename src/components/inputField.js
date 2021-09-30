@@ -46,35 +46,6 @@ export default class FormDataComponent extends Component {
         this.setState({ date: e.target.value })
     }
 
-
-    // componentDidMount() {
-    //     this.userData = JSON.parse(localStorage.getItem('user'));
-
-    //     if (localStorage.getItem('user')) {
-    //         this.setState({
-    //             name: this.userData.name,
-    //             email: this.userData.email,
-    //             phone: this.userData.phone,
-    //             email: this.userData.location,
-    //             phone: this.userData.date
-    //         })
-    //     }else {
-    //         this.setState({
-    //             name: '',
-    //             email: '',
-    //             phone: '',
-    //             location: '',
-    //             date: '',
-    //         })
-    //     }
-    // }
-
-    // componentWillUpdate(nextProps, nextState) {
-
-    //     localStorage.setItem('user', JSON.stringify(nextState));
-
-    // }
-
     onSubmit(e) {
 
 
@@ -103,31 +74,40 @@ export default class FormDataComponent extends Component {
 
     render() {
         const style = {
-            width: "95%"    
+            width: "95%"
         }
         return (
             <div className="container m-2 p-2" style={style}>
                 <div className="card p-2 mw-2">
+
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label>Name</label>
-                            <input type="text" className="form-control" value={this.state.name} onChange={this.onChangeName} />
+                            <input type="text" placeholder="Full Name" className="form-control" value={this.state.name} onChange={this.onChangeName} />
                         </div>
                         <div className="form-group">
                             <label>Email Address</label>
-                            <input type="text" className="form-control" value={this.state.email} onChange={this.onChangeEmail} />
+                            <input type="text" placeholder="Email Address" className="form-control" value={this.state.email} onChange={this.onChangeEmail} />
                         </div>
                         <div className="form-group">
                             <label>Contact Number</label>
-                            <input type="text" className="form-control" value={this.state.phone} onChange={this.onChangePhone} />
+                            <input type="text" placeholder="Phone Number" className="form-control" value={this.state.phone} onChange={this.onChangePhone} />
                         </div>
                         <div className="form-group">
-                            <label>Location</label>
-                            <input type="text" className="form-control" value={this.state.location} onChange={this.onChangeLocation} />
+                        <div className="dropdown show">
+                            <label for="inputState">Location</label>
+                            <select id="inputState" className="form-control">
+                                <option selected>Choose Location</option>
+                                <option value={this.state.location} onChange={this.onChangeLocation}>Cebu</option>
+                                <option value={this.state.location} onChange={this.onChangeLocation}>Manila</option>
+                            </select>
                         </div>
+                        </div>
+
+                       
                         <div className="form-group">
                             <label>Registered Date</label>
-                            <input type="text" className="form-control" value={this.state.date} onChange={this.onChangeDate} />
+                            <input type="date" className="form-control" value={this.state.date} onChange={this.onChangeDate} />
                         </div> <br />
                         <button type="submit" className="btn btn-success btn-block" >Add Contact</button>
                     </form>
